@@ -12,12 +12,12 @@ import Button from '@mui/material/Button';
 
 
 export default function SelectDrop() {
-  const [formValue, setFormValue] = React.useState({
-    degree: "",
-    department: "",
-    semester: "",
+  // const [formValue, setFormValue] = React.useState({
+  //   degree: "",
+  //   department: "",
+  //   semester: "",
 
-  });
+  // });
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -34,7 +34,7 @@ export default function SelectDrop() {
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          value={degree}
+          // value={degree}
           label="Degree"
           onChange={handleChange}
         >
@@ -49,7 +49,7 @@ export default function SelectDrop() {
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          value={department}
+          // value={department}
           label="Department"
           onChange={handleChange}
         >
@@ -69,7 +69,7 @@ export default function SelectDrop() {
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          value={semester}
+          // value={semester}
           label="Semester"
           onChange={handleChange}
         >
