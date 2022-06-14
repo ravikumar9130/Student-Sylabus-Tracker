@@ -12,18 +12,23 @@ import Button from '@mui/material/Button';
 
 
 export default function SelectDrop() {
-  // const [formValue, setFormValue] = React.useState({
-  //   degree: "",
-  //   department: "",
-  //   semester: "",
+  const [formValue, setFormValue] = React.useState({
+    degree: "",
+    department: "",
+    semester: "",
+    year: "",
 
-  // });
+  });
+ const handleChange = (event) => {
+    setFormValue({ ...formValue, [event.target.name]: event.target.value });
+   
+  }
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    // setAge(event.target.value);
-  };
-
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(formValue);
+  }
+let{degree,department,semester}=formValue;
   return (
     <>
     <div className='select_con'>
@@ -34,8 +39,9 @@ export default function SelectDrop() {
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          // value={degree}
+          value={degree}
           label="Degree"
+          name="degree"
           onChange={handleChange}
         >
           <MenuItem value={"btech"}>B Tech</MenuItem>
@@ -49,7 +55,8 @@ export default function SelectDrop() {
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          // value={department}
+          value={department}
+          name="department"
           label="Department"
           onChange={handleChange}
         >
@@ -69,18 +76,19 @@ export default function SelectDrop() {
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          // value={semester}
+          value={semester}
+          name="semester"
           label="Semester"
           onChange={handleChange}
         >
-          <MenuItem value={1}>Semester 1</MenuItem>
-          <MenuItem value={2}>Semester 2</MenuItem>
-          <MenuItem value={3}>Semester 3</MenuItem>
-          <MenuItem value={4}>Semester 4</MenuItem>
-          <MenuItem value={5}>Semester 5</MenuItem>
-          <MenuItem value={6}>Semester 6</MenuItem>
-          <MenuItem value={7}>Semester 7</MenuItem>
-          <MenuItem value={8}>Semester 8</MenuItem>
+          <MenuItem value={"1"}>Semester 1</MenuItem>
+          <MenuItem value={"2"}>Semester 2</MenuItem>
+          <MenuItem value={"3"}>Semester 3</MenuItem>
+          <MenuItem value={"4"}>Semester 4</MenuItem>
+          <MenuItem value={"5"}>Semester 5</MenuItem>
+          <MenuItem value={"6"}>Semester 6</MenuItem>
+          <MenuItem value={"7"}>Semester 7</MenuItem>
+          <MenuItem value={"8"}>Semester 8</MenuItem>
         </Select>
       </FormControl>
       </Box>
@@ -92,17 +100,20 @@ export default function SelectDrop() {
       <RadioGroup
         aria-labelledby="demo-radio-buttons-group-label"
         defaultValue="2018"
-        name="radio-buttons-group"
+        onChange={handleChange}
+        name="year"
+        // name="radio-buttons-group"
       >
-        <FormControlLabel  value="2018" control={<Radio />} label="2018" />
+        <FormControlLabel value="2018" control={<Radio />} label="2018" />
         <FormControlLabel value="2020" control={<Radio />} label="2020" />
       </RadioGroup>
     </FormControl>
     </div>
     
-      </div> <Box sx={{marginTop:4, minWidth: 120 ,width:460 }}>
-      <Button color="secondary" variant="contained">Next</Button>
+      </div> <center><Box sx={{marginTop:4, minWidth: 120 ,width:460 }}>
+      <Button onClick={handleSubmit} color="secondary" variant="contained">Next</Button>
       </Box>
+      </center>
       </>
   );
 }
