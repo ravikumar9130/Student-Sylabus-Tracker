@@ -16,7 +16,7 @@ export default function SelectDrop() {
     degree: "",
     department: "",
     semester: "",
-    year: "",
+    year: "2018",
 
   });
   let navigate = useNavigate();
