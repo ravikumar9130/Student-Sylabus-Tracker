@@ -9,7 +9,7 @@ import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormLabel from '@mui/material/FormLabel';
 import Button from '@mui/material/Button';
-
+import {useNavigate} from 'react-router-dom'
 
 export default function SelectDrop() {
   const [formValue, setFormValue] = React.useState({
@@ -19,6 +19,7 @@ export default function SelectDrop() {
     year: "",
 
   });
+  let navigate = useNavigate();
  const handleChange = (event) => {
     setFormValue({ ...formValue, [event.target.name]: event.target.value });
    
@@ -27,6 +28,7 @@ export default function SelectDrop() {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(formValue);
+    navigate('/syllabus');
   }
 let{degree,department,semester}=formValue;
   return (
@@ -110,7 +112,8 @@ let{degree,department,semester}=formValue;
     </FormControl>
     </div>
     
-      </div> <center><Box sx={{marginTop:4, minWidth: 120 ,width:460 }}>
+      </div> <center> <Box sx={{marginTop:4, minWidth: 120 ,width:460 }}>
+       
       <Button onClick={handleSubmit} color="secondary" variant="contained">Next</Button>
       </Box>
       </center>
