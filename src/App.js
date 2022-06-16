@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route} from "react-router-dom";
 import Login from "./screens/SignIn";
 import SignUp from "./screens/SignUp";
 import Notfound from "./screens/Notfound";
+import Syllabus from "./components/Syllabus";
 
 function App() {
 
@@ -13,7 +14,7 @@ function App() {
         <Route path="/" element={<Login />} />
         <Route path="/sign-up" element ={<SignUp/>} />
         <Route path="/home" element={<Home />} />
-        <Route path="/syllabus" element={<Login />} />
+        <Route path="/syllabus" element={<Syllabus/>} />
         <Route path="*" element={<Notfound />} />
       </Routes>
     </BrowserRouter>

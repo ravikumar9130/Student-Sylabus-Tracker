@@ -6,7 +6,6 @@ const express = require("express");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken")
 
-
 const app = express();
 app.use(function(req, res, next) {
   res.setHeader('Access-Control-Allow-Origin', '*');
